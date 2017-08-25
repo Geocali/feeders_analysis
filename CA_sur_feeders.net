@@ -1,0 +1,65 @@
+* C:\_data_cv\ERS\CV\System sizing\simulation\CA_sur_feeders.asc
+R1 N009 N008 {{rho_cu}*{Nb_rails}*{L_rail}/s_feeder} tol=0 pwr=0
+V1 N008 0 750
+R2 N012 N008 {{rho_cu}*2*{Nb_rails}*{L_rail}/s_feeder}
+R3 N014 N008 {{rho_cu}*3*{Nb_rails}*{L_rail}/s_feeder}
+R4 N013 N012 {{rho_cu}*2*{Nb_rails}*{L_rail}/s_feeder}
+R5 N015 N014 {{rho_cu}*2*{Nb_rails}*{L_rail}/s_feeder}
+R6 N010 N009 {{rho_cu}*5*{Nb_rails}*{L_rail}/s_feeder}
+Rtruck1 0 N008 {Rtruck1}
+Rtruck2 N001 N009 {Rtruck2}
+Rtruck3 N002 N012 {Rtruck3}
+Rtruck4 N003 N014 {Rtruck4}
+Rtruck5 N004 N013 {Rtruck5}
+Rtruck6 N005 N015 {Rtruck6}
+Rtruck8 N007 N011 {Rtruck8}
+R14 N011 N013 {{rho_cu}*3*{Nb_rails}*{L_rail}/s_feeder}
+Rtruck7 N006 N010 {Rtruck7}
+R16 N011 N010 {{rho_cu}*1*{Nb_rails}*{L_rail}/s_feeder}
+R17 N007 N006 {{rho_cu}*1*{Nb_rails}*{L_rail}/s_retour}
+R18 N006 N005 {{rho_cu}*1*{Nb_rails}*{L_rail}/s_retour}
+R19 N005 N004 {{rho_cu}*1*{Nb_rails}*{L_rail}/s_retour}
+R20 N004 N003 {{rho_cu}*1*{Nb_rails}*{L_rail}/s_retour}
+R21 N003 N002 {{rho_cu}*1*{Nb_rails}*{L_rail}/s_retour}
+R22 N002 N001 {{rho_cu}*1*{Nb_rails}*{L_rail}/s_retour}
+R23 N001 0 {{rho_cu}*1*{Nb_rails}*{L_rail}/s_retour}
+R24 N011 N015 {{rho_cu}*2*{Nb_rails}*{L_rail}/s_feeder}
+* CA2
+* CA1
+* CA3
+* CA4
+* CA5
+* CA6
+* CA8
+* Truck_load1
+* Truck_load2
+* Truck_load3
+* Truck_load4
+* Truck_load5
+* Truck_load6
+* Truck_load8
+* Equipotential2
+* Equipotential1
+* Feeder1
+* Feeder2
+* Feeder3
+.params L_rail=20 Nb_rails=3 P_truck=120000 rho_cu=0.000000017 s_feeder=0.00007 s_retour=0.00021
+.tran 1
+* Truck_load7
+* CA7
+* (La résistance des câbles entre rail et feeder est négligée)
+* Câble retour traction
+* (La résistance des câbles entre rail et câble retour est négligée)
+* (en cuivre)
+.params R_vide=9999999999 R_truck=750*750/P_truck
+* (grosse approx : U=750V et moteur = résistance pure)
+.params Rtruck1=R_truck
+.params Rtruck2=R_truck
+.params Rtruck3=R_vide
+.params Rtruck4=R_truck
+.params Rtruck5=R_vide
+.params Rtruck6=R_vide
+.params Rtruck7=R_truck
+.params Rtruck8=R_truck
+.backanno
+.end
