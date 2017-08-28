@@ -289,7 +289,6 @@ class netlist_class:
         ltspice_path = "C:/_data_cv/LiberKey/LTspiceIV/LTspiceIV/scad3.exe"
         options = "-ascii -b -run"
         command = ltspice_path + " " + options + " \"" + self.linux_filename + "\""
-        print(command)
         os.system(command)
         
         #Read in log file and check for errors
