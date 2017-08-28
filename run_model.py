@@ -126,11 +126,21 @@ class simu_camions:
             resultats_tmp['t'] = pd.Series(t, index=resultats_tmp.index)
             resultats.append(resultats_tmp)
         
-        # on fait une courbe du courant des feeders
+        # on joint tous les tableaux
         resultats = pd.concat(resultats)
-        
-        i_feeders = resultats[resultats['nom_point'].str.contains("Ra_v1.f2.1")]
-        i_feeders.to_csv("courants_feeder.csv", sep=";")
+        # on ne garde que les feeders
+        i_feeders = resultats[resultats['nom_point'].str.contains("Ra_")]
+        i_feeders = i_feeders[['nom_point', 't', 'valeur']]
+        # on fait une colonne pour chaque feeder
+        nom_feeders = i_feeders.nom_point.unique()
+        tableau_final = pd.DataFrame()
+        # on ajoute une colonne avec le temps
+        tableau_final['t'] = [i + 1 for i in range(duree)]
+        for nom in nom_feeders:
+            tableau_final[nom] = i_feeders.loc[i_feeders['nom_point'] == nom]['valeur'].values
+        # on prend les valeurs absolues des courants
+        tableau_final = tableau_final.apply(abs)
+        tableau_final.to_csv("courants_feeder.csv", sep=";", index=False)
         
         
 # -----------------------------------------

@@ -1,21 +1,21 @@
-* C:\_data_cv\ERS\CV\System sizing\simulation\CA_sur_feeders2.asc
-Ra_v1.f1.1 N009 N008 {1*{Raller1CA}} tol=0 pwr=0
-V§ERScabinet1 N008 0 750
-Ra_v1.f2.1 N012 N008 {2*{Raller1CA}}
-Ra_v1.f3.1 N014 N008 {3*{Raller1CA}}
-Ra_v1.f2.2 N013 N012 {2*{Raller1CA}}
-Ra_v1.f3.2 N015 N014 {2*{Raller1CA}}
-Ra_v1.f1.2 N010 N009 {5*{Raller1CA}}
-Rt_v1.1 0 N008 {Rtruck1}
-Rt_v1.2 N001 N009 {Rtruck2}
-Rt_v1.3 N002 N012 {Rtruck3}
-Rt_v1.4 N003 N014 {Rtruck4}
-Rt_v1.5 N004 N013 {Rtruck5}
-Rt_v1.6 N005 N015 {Rtruck6}
-Rt_v1.8 N007 N011 {Rtruck8}
-Ra_v1.f2.3 N011 N013 {3*{Raller1CA}}
-Rt_v1.7 N006 N010 {Rtruck7}
-Ra_v1.f1.3 N011 N010 {1*{Raller1CA}}
+* C:\_data_cv\ERS\CV\System sizing\simulation\CA_sur_feeders.asc
+Ra_v1.f1.1 N016 N015 {1*{Raller1CA}} tol=0 pwr=0
+V§ERScabinet1 N015 0 750
+Ra_v1.f2.1 N022 N015 {2*{Raller1CA}}
+Ra_v1.f3.1 N026 N015 {3*{Raller1CA}}
+Ra_v1.f2.2 N023 N022 {2*{Raller1CA}}
+Ra_v1.f3.2 N027 N026 {2*{Raller1CA}}
+Ra_v1.f1.2 N017 N016 {5*{Raller1CA}}
+Rt_v1.1 0 N015 {Rtruck1}
+Rt_v1.2 N001 N016 {Rtruck2}
+Rt_v1.3 N002 N022 {Rtruck3}
+Rt_v1.4 N003 N026 {Rtruck4}
+Rt_v1.5 N004 N023 {Rtruck5}
+Rt_v1.6 N005 N027 {Rtruck6}
+Rt_v1.8 N007 N018 {Rtruck8}
+Ra_v1.f2.3 N018 N023 {3*{Raller1CA}}
+Rt_v1.7 N006 N017 {Rtruck7}
+Ra_v1.f1.3 N018 N017 {1*{Raller1CA}}
 Rr_v1.7 N007 N006 {Rretour}
 Rr_v1.6 N006 N005 {Rretour}
 Rr_v1.5 N005 N004 {Rretour}
@@ -23,7 +23,31 @@ Rr_v1.4 N004 N003 {Rretour}
 Rr_v1.3 N003 N002 {Rretour}
 Rr_v1.2 N002 N001 {Rretour}
 Rr_v1.1 N001 0 {Rretour}
-Ra_v1.f3.3 N011 N015 {2*{Raller1CA}}
+Ra_v1.f3.3 N018 N027 {2*{Raller1CA}}
+Ra_v1.f1.4 N019 N018 {1*{Raller1CA}} tol=0 pwr=0
+Ra_v1.f2.4 N024 N018 {2*{Raller1CA}}
+Ra_v1.f3.4 N028 N018 {3*{Raller1CA}}
+Ra_v1.f2.5 N025 N024 {2*{Raller1CA}}
+Ra_v1.f3.5 N029 N028 {2*{Raller1CA}}
+Ra_v1.f1.5 N020 N019 {5*{Raller1CA}}
+Rt_v1.9 N008 N019 {Rtruck2}
+Rt_v1.10 N009 N024 {Rtruck3}
+Rt_v1.11 N010 N028 {Rtruck4}
+Rt_v1.12 N011 N025 {Rtruck5}
+Rt_v1.13 N012 N029 {Rtruck6}
+Rt_v1.15 N014 N021 {Rtruck8}
+Ra_v1.f2.6 N021 N025 {3*{Raller1CA}}
+Rt_v1.14 N013 N020 {Rtruck7}
+Ra_v1.f1.6 N021 N020 {1*{Raller1CA}}
+Rr_v1.14 N014 N013 {Rretour}
+Rr_v1.13 N013 N012 {Rretour}
+Rr_v1.12 N012 N011 {Rretour}
+Rr_v1.11 N011 N010 {Rretour}
+Rr_v1.10 N010 N009 {Rretour}
+Rr_v1.9 N009 N008 {Rretour}
+Rr_v1.8 N008 N007 {Rretour}
+Ra_v1.f3.6 N021 N029 {2*{Raller1CA}}
+V§ERScabinet2 N021 0 750
 * CA_v1.2
 * CA_v1.1
 * CA_v1.3
@@ -43,7 +67,7 @@ Ra_v1.f3.3 N011 N015 {2*{Raller1CA}}
 * Feeder3
 * Feeder2
 * Feeder1
-.params L_rail=20 Nb_rails=3 P_truck=120000
+.params L_rail=20 Nb_rails=2 P_truck=120000
 .tran 1
 * Truck_load7
 * CA_v1.7
@@ -57,6 +81,13 @@ Ra_v1.f3.3 N011 N015 {2*{Raller1CA}}
 .params Rtruck6=R_vide
 .params Rtruck7=R_truck
 .params Rtruck8=R_truck
+.params Rtruck9=R_truck
+.params Rtruck10=R_truck
+.params Rtruck11=R_vide
+.params Rtruck12=R_truck
+.params Rtruck13=R_vide
+.params Rtruck14=R_vide
+.params Rtruck15=R_truck
 .params Rretour=rho_cu*1*Nb_rails*L_rail/s_retour
 .params Raller1CA=rho_cu*Nb_rails*L_rail/s_feeder
 * VOIE 1
@@ -64,5 +95,20 @@ Ra_v1.f3.3 N011 N015 {2*{Raller1CA}}
 .params rho_cu=0.000000017 s_feeder=0.00007 s_retour=0.00021
 * Paramètres de la simulation
 * Hypothèses\n- moteur modélisé par une résistance pure, à une tension arbitraire\n- résistance entre rail et feeder négligée
+* CA_v1.9
+* CA_v1.10
+* CA_v1.11
+* CA_v1.12
+* CA_v1.13
+* CA_v1.15
+* Truck_load9
+* Truck_load10
+* Truck_load11
+* Truck_load12
+* Truck_load13
+* Truck_load15
+* Equipotential3
+* Truck_load14
+* CA_v1.14
 .backanno
 .end
